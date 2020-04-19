@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
-
+//様々なコントローラで使える
 public class EncryptUtil {
     public static String getPasswordEncrypt(String plain_p, String salt) {
         String ret = "";
