@@ -15,19 +15,19 @@ import javax.persistence.Table;
 @Table(name = "employees")
 @NamedQueries({
     @NamedQuery(
-            name = "getAllEmployees",
+            name = "getAllEmployees", //全ての従業員情報を取得
             query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
             ),
     @NamedQuery(
-            name = "getEmployeesCount",
+            name = "getEmployeesCount", //従業員n情報の全件数を取得
             query = "SELECT COUNT(e) FROM Employee AS e"
             ),
     @NamedQuery(
-            name = "checkRegisteredCode",
+            name = "checkRegisteredCode", //指定された社員番号が既にDBに存在しているか調べる
             query = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :code"
             ),
     @NamedQuery(
-            name ="checkLoginCodeAndPassword",
+            name ="checkLoginCodeAndPassword", //従業員がログインするときに社員番号とパスワードが正しいかをチェック
             query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password =:pass"
             )
 })
@@ -39,15 +39,18 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    //社員番号がログインIDになるため、一意制約にし重複を避ける
     @Column(name = "code", nullable = false, unique = true)
     private String code;
 
     @Column(name = "name", nullable = false)
     private String name;
 
+    //システムへのログインパスワード
     @Column(name = "password", length = 64, nullable = false)
     private String password;
 
+    //管理者権限があるかどうか(一般:0, 管理者:1)
     @Column(name = "admin_flag", nullable = false)
     private Integer admin_flag;
 
@@ -57,6 +60,7 @@ public class Employee {
     @Column(name = "updated_at", nullable = false)
     private Timestamp  updated_at;
 
+    //削除された従業員かどうか (現役:0, 削除済み:1)
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
 

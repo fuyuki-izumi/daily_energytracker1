@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- <c:import> を使うことで、url 属性に指定したファイルの内容をその位置で読み込むことができる --%>
+<%--app.jspからheader,footer,cssを読み込む --%>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
+
+    <%--Index.Servletから受け取ったなかにflush(=エラー）があれば施行 --%>
         <c:if test="${flush != null}">
             <div id="flush_success">
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>従業員　一覧</h2>
+        <h2>従業員 一覧</h2>
         <table id="employee_list">
             <tbody>
                 <tr>
@@ -24,7 +28,7 @@
                                 <c:when test="${employee.delete_flag == 1}">
                                     （削除済み）
                                 </c:when>
-                                <c:otherwise>
+                                <c:otherwise>    <%--show.jspのidに対応したものを参照 --%>
                                     <a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a>
                                 </c:otherwise>
                             </c:choose>

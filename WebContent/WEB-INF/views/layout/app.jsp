@@ -7,6 +7,8 @@
     <head>
         <meta charset="UTF-8">
         <title>日報管理システム</title>
+
+        <%--レイアウトを追加、フロントエンド --%>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
@@ -15,13 +17,13 @@
             <div id="header">
                 <h1>日報管理システム</h1>
             </div>
-            <div id="content">
+            <div id="content">  <%--index.jspの内容が入っている --%>
                 ${param.content}
             </div>
             <div id="footer">
                 by Taro Kirameki
             </div>
-        </div>
+         </div>
 
     </body>
 </html>

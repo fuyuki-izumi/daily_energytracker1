@@ -39,6 +39,8 @@ public class EmployeesCreateServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = (String)request.getParameter("_token");
+        //CSRF対策のチェック
+        //_token に値がセットされていなかったりセッションIDと値が異なったりしたらデータの登録ができないようにしている。
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
@@ -59,10 +61,13 @@ public class EmployeesCreateServlet extends HttpServlet {
             e.setUpdated_at(currentTime);
             e.setDelete_flag(0);
 
+            //新規登録の場合、パスワードの入力値チェック、社員番号の重複チェックを実施
+            //(@Employee.ValidatorServlet.java) validate(Employee e, Boolean code_duplicate_check_flag, Boolean password_check_flag)
             List<String> errors = EmployeeValidator.validate(e, true, true);
             if(errors.size() > 0) {
                 em.close();
 
+              //フォームに初期値を設定、 new.jspに入力データを送る
                 request.setAttribute("_token", request.getSession().getId());
                 request.setAttribute("employee", e);
                 request.setAttribute("errors", errors);
@@ -70,12 +75,15 @@ public class EmployeesCreateServlet extends HttpServlet {
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/employees/new.jsp");
                 rd.forward(request, response);
             } else {
+
+               //Employeeクラスのオブジェクトをpersistメソッドを使ってDBへセーブ
                 em.getTransaction().begin();
                 em.persist(e);
                 em.getTransaction().commit();
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
+                //indexページへリダイレクト（遷移）
                 response.sendRedirect(request.getContextPath() + "/employees/index");
             }
         }

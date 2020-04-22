@@ -30,7 +30,10 @@ public class EmployeesNewServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //CSRF対策
+        //_form.jspからhidden要素で送られてきた値とセッションに格納された値が同一であれば送信を受け付ける
         request.setAttribute("_token", request.getSession().getId());
+        //おまじないとしてのインスタンスを生成、リクエストスコープに格納
         request.setAttribute("employee", new Employee());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/employees/new.jsp");
