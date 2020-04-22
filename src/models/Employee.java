@@ -60,7 +60,7 @@ public class Employee {
     @Column(name = "updated_at", nullable = false)
     private Timestamp  updated_at;
 
-    //削除された従業員かどうか (現役:0, 削除済み:1)
+    //削除された従業員かどうか (現役:0, 削除済み:1)*論理削除
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
 
