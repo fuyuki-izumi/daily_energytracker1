@@ -2,6 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
+    <%--「社員番号かパスワードが間違っています。」のエラーメッセージは
+    今までのようにサーブレットからメッセージをリクエストスコープにセットするのではなく
+    あらかじめJSPに記述しておき、hasError という変数がリクエストスコープに
+    true でセットされていれば表示する --%>
+
         <c:if test="${hasError}">
             <div id="flush_error">
                 社員番号かパスワードが間違っています。

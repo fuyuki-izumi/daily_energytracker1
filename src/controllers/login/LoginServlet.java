@@ -60,6 +60,9 @@ public class LoginServlet extends HttpServlet {
         if(code != null && !code.equals("") && plain_pass != null && !plain_pass.equals("")) {
             EntityManager em = DBUtil.createEntityManager();
 
+            //EncryptUtil.getPasswordEncrypt() を使って
+            //フォームから入力されたパスワードにソルト文字列を連結した文字列を暗号化
+            //そのデータとデータベース上のデータで照合を行う
             String password = EncryptUtil.getPasswordEncrypt(
                     plain_pass,
                     (String)this.getServletContext().getAttribute("salt")
@@ -98,4 +101,3 @@ public class LoginServlet extends HttpServlet {
     }
 
 }
-
