@@ -20,6 +20,7 @@
                         <tr>
                             <th>内容</th>
                             <td>
+                            <%--<pre>タグにより、改行を改行のまま表示できるようになる。 --%>
                                 <pre><c:out value="${report.content}" /></pre>
                             </td>
                         </tr>
@@ -38,6 +39,8 @@
                     </tbody>
                 </table>
 
+         <%--日報の作成者以外の人が該当の日報を編集できないよう、直下のコードで、
+         違う人の日報の場合はeditへのリンクを出さないようにしている。 --%>
                 <c:if test="${sessionScope.login_employee.id == report.employee.id}">
                     <p><a href="<c:url value="/reports/edit?id=${report.id}" />">この日報を編集する</a></p>
                 </c:if>
