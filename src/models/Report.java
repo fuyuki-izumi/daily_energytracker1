@@ -27,6 +27,7 @@ import javax.persistence.Table;
             name = "getReportsCount",
             query = "SELECT COUNT(r) FROM Report AS r"
             ),
+    //トップページに自分の日報の一覧を表示するための２つのクエリ
     @NamedQuery(
             name = "getMyAllReports",
             query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"

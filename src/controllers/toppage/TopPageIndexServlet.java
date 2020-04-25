@@ -37,7 +37,7 @@ public class TopPageIndexServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         Employee login_employee = (Employee)request.getSession().getAttribute("login_employee");
-
+        //ページネーション
         int page;
         try{
             page = Integer.parseInt(request.getParameter("page"));
