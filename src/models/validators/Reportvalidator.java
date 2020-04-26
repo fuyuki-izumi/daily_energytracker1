@@ -22,6 +22,7 @@ public class ReportValidator {
         return errors;
     }
 
+    //
     private static String _validateTitle(String title) {
         if(title == null || title.equals("")) {
             return "タイトルを入力してください。";
