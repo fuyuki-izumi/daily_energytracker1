@@ -1,6 +1,7 @@
 package controllers.reports;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Report;
+import models.ReportYoine;
 import utils.DBUtil;
 
 /**
@@ -50,9 +52,26 @@ public class ReportsIndexServlet extends HttpServlet {
         long reports_count = (long)em.createNamedQuery("getReportsCount", Long.class)
                                      .getSingleResult();
 
+        List<ReportYoine> report_yoine_list = new ArrayList<>();
+        for(int i = 0; i < reports.size(); i++){
+            ReportYoine reportYoine = new ReportYoine();
+            reportYoine.setId(reports.get(i).getId());
+            reportYoine.setEmployee(reports.get(i).getEmployee());
+            reportYoine.setReport_date(reports.get(i).getReport_date());
+            reportYoine.setTitle(reports.get(i).getTitle());
+            reportYoine.SetContent(reports.get(i).getContent());
+
+            Long yoineCount = (Long)em.createNamedQuery("getLimitedYoineCount" ,Long.class)
+                                      .setParameter("report", reports.get(i))
+                                      .getSingleResult();
+
+            reportYoine.setYoineCount(yoineCount);
+            report_yoine_list.add(reportYoine);
+        }
+
         em.close();
 
-        request.setAttribute("reports", reports);
+        request.setAttribute("reports", report_yoine_list);
         request.setAttribute("reports_count", reports_count);
         request.setAttribute("page", page);
         if(request.getSession().getAttribute("flush") != null) {

@@ -38,6 +38,7 @@ public class YoineUpdateServlet extends HttpServlet {
             Yoine y = new Yoine();
             //Yoine.javaからemp_idとrep_idを呼び出す
             y.setEmployee((Employee)request.getSession().getAttribute("login_employee"));
+
             Report report = em.find(Report.class, Integer.parseInt(request.getParameter("report_id")));
             y.setReport(report);
 
@@ -49,11 +50,11 @@ public class YoineUpdateServlet extends HttpServlet {
 
             Yoine y = em.find(Yoine.class, Integer.parseInt(request.getParameter("yoine_id")));　*/
 
-/*
-         //いいねされた数を計算する処理　L14 5.2参照
+
+         /*//いいねされた数を計算する処理　L14 5.2参照
            long the_number_of_yoine = (long)em.createNamedQuery("getLimitedYoineCount", Long.class)
                                        .setParameter("report", report)
-                                       .setParameter("employee", employee)
+                                       //.setParameter("employee", login_employee)
                                        .getSingleResult();
 
            request.setAttribute("the_number_of_yoine", the_number_of_yoine); */
