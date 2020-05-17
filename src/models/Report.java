@@ -66,6 +66,14 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    /*@Column(name = "satisfy" , nullable = false)
+    private Integer satisfy;
+
+    @Column(name = "accomplishment" , nullable = false)
+    private Integer accomplishment; */
+
+
+
     public Integer getId() {
         return id;
     }
@@ -121,4 +129,20 @@ public class Report {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
+
+   /*public Integer getSatisfy(){
+        return satisfy;
+    }
+
+    public void setSatisfy(Integer satisfy){
+        this.satisfy = satisfy;
+    }
+
+    public Integer getAccomplishment(){
+        return accomplishment;
+    }
+
+    public void setAccomplishment(Integer accomplishment){
+       this.accomplishment = accomplishment;
+    } */
 }

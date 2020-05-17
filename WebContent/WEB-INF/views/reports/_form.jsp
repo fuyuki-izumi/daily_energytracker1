@@ -26,5 +26,35 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
+<label for="satisfy">満足度（喜び）</label><br />
+<select name="satisfy"<%--  value="${report.satisfy}"--%> >
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select>
+<br /><br />
+
+<%-- <label for="accomplish">達成感</label><br />
+<select name="accomplishment" value="${report.accomplishment}">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select>
+<br /><br /> --%>
+
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>

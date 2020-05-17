@@ -19,7 +19,7 @@ import javax.persistence.Table;
             query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
             ),
     @NamedQuery(
-            name = "getEmployeesCount", //従業員n情報の全件数を取得
+            name = "getEmployeesCount", //従業員の情報の全件数を取得
             query = "SELECT COUNT(e) FROM Employee AS e"
             ),
     @NamedQuery(

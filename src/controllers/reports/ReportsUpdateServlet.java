@@ -32,6 +32,12 @@ public class ReportsUpdateServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+   /* protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+
+
+
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
@@ -48,6 +54,10 @@ public class ReportsUpdateServlet extends HttpServlet {
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
             r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            //r.getSatisfy(request.getParameter("satisfy"));
+            //r.getAccomplishment(request.getParameter("accomplishment"));
+
+
 
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {

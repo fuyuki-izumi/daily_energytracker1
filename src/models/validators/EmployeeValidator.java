@@ -12,9 +12,10 @@ import utils.DBUtil;
 public class EmployeeValidator {
     public static List<String> validate(Employee e, Boolean code_duplicate_check_flag, Boolean password_check_flag) {
 
-        //エラーの場合
+        //エラーの場合 該当servletに以下のバリデーションをimportする
         List<String> errors = new ArrayList<String>();
 
+        //変数宣言？
         String code_error = _validateCode(e.getCode(), code_duplicate_check_flag);
         if(!code_error.equals("")) {
             errors.add(code_error);
