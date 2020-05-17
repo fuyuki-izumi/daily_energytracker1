@@ -67,7 +67,7 @@
 
         <%-- いいねボタン→YoineUpdateServlet(POST)呼び出し l14 3.6参照
         <p><a href="<c:url value='/yoine/update' />">いいね </a></p> --%>
-        <form name="form_yoine" method="POST" action="<c:url value='/yoine/update?token=${_token}' />">
+        <form name="form_yoine" method="POST" action="<c:url value='/yoine/update?token=${_token}&report_id=${report.id}' />">
         <!-- CSRF -->
         <a href="javascript:form_yoine.submit()">いいね</a>
         </form>

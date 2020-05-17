@@ -17,27 +17,14 @@ import models.Yoine;
 import models.validators.YoineValidator;
 import utils.DBUtil;
 
-/**
- * Servlet implementation class YoineUpdateServlet
- */
+
 @WebServlet("/yoine/update")
 public class YoineUpdateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public YoineUpdateServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-   /* public void doGet (HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException
-            {
-            this.doPost(request, response);
-            }*/
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = (String)request.getParameter("token");
@@ -46,37 +33,30 @@ public class YoineUpdateServlet extends HttpServlet {
           //@DBUtilのHibernateに接続するおまじない
             EntityManager em = DBUtil.createEntityManager();
 
+
+
+            Yoine y = new Yoine();
+            //Yoine.javaからemp_idとrep_idを呼び出す
+            y.setEmployee((Employee)request.getSession().getAttribute("login_employee"));
+            Report report = em.find(Report.class, Integer.parseInt(request.getParameter("report_id")));
+            y.setReport(report);
+
+
          /* //DBのemp_repテーブルにアクセス
             //セッションスコープからいいねのIDを取得して
             //該当のIDのいいね1件のみをDBから取得 RepUpdServlet参照
             Yoine y = em.find(Yoine.class, (Integer)(request.getSession().getAttribute("yoine_id")));
 
-            Yoine y = em.find(Yoine.class, Integer.parseInt(request.getParameter("yoine_id")));
+            Yoine y = em.find(Yoine.class, Integer.parseInt(request.getParameter("yoine_id")));　*/
 
-            //RepCreateServlet参考 値がなければnewする。
-           if(y == null){
-           y = new Yoine();
-           }
-               */
-           Yoine y = new Yoine();
-
-            //r = Integer.valueOf(request.getParameter("report_id"));
-
-
-               //Yoine.javaからemp_idとrep_idを呼び出す
-           y.setEmployee((Employee)request.getSession().getAttribute("employee_id"));
-           y.setReport((Report)request.getSession().getAttribute("report_id"));
-
-          //いいねされた数を計算する処理　L14 5.2参照
-           Report report = (Report)request.getSession().getAttribute("report");
-
+/*
+         //いいねされた数を計算する処理　L14 5.2参照
            long the_number_of_yoine = (long)em.createNamedQuery("getLimitedYoineCount", Long.class)
                                        .setParameter("report", report)
+                                       .setParameter("employee", employee)
                                        .getSingleResult();
 
-
-
-           request.setAttribute("the_number_of_yoine", the_number_of_yoine);
+           request.setAttribute("the_number_of_yoine", the_number_of_yoine); */
 
 
            //バリデーションを実行しエラーがあったらshowのページに戻る L13 15,5参照
@@ -93,10 +73,10 @@ public class YoineUpdateServlet extends HttpServlet {
                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");
                rd.forward(request,response);
            }else{
-
            // DB更新
            em.getTransaction().begin();
-           //em.persist(y);
+           //DBに保存するメソッド
+           em.persist(y);
            em.getTransaction().commit();
            request.getSession().setAttribute("flush","あなたのいいねが追加されました。");
            //EntityManagerの利用を終了

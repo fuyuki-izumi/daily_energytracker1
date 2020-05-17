@@ -47,11 +47,11 @@ public class Yoine {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name ="employee_id" , nullable =false)
+    @JoinColumn(name ="employee_id" , nullable =false)//空の値は入れられない
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name ="report_id" , nullable =false)
+    @JoinColumn(name ="report_id" , nullable =false)//同上
     private Report report;
 
     public Integer getId(){
