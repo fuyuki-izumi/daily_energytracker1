@@ -37,7 +37,7 @@
                             </td>
                         </tr>
 
-                        <%-- <tr>
+                        <tr>
                             <th>満足度（喜び）</th>
                             <td>
                                 <c:out value="${report.satisfy}" />
@@ -48,7 +48,7 @@
                             <td>
                                 <c:out value="${report.accomplishment}" />
                             </td>
-                        </tr> --%>
+                        </tr>
 
                     </tbody>
                 </table>

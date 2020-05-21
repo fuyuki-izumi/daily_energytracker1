@@ -69,6 +69,7 @@ public class YoineUpdateServlet extends HttpServlet {
                request.setAttribute("_token", request.getSession().getId());
                request.setAttribute("yoine", y);
                request.setAttribute("errors", errors);
+               request.getSession().setAttribute("flush","あなたは既にいいねしています。");
 
                //ビューとなるindex.jspを指定してフォワード
                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");

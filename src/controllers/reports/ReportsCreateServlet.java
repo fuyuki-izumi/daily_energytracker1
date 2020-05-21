@@ -65,6 +65,9 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
 
+            Integer.valueOf(request.getParameter("Accomplishment")).intValue();
+            Integer.valueOf(request.getParameter("Satisfy")).intValue();
+
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {
                 em.close();

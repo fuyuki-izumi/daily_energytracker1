@@ -41,7 +41,7 @@
 </select>
 <br /><br />
 
-<%-- <label for="accomplish">達成感</label><br />
+<label for="accomplish">達成感</label><br />
 <select name="accomplishment" value="${report.accomplishment}">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -54,7 +54,7 @@
     <option value="9">9</option>
     <option value="10">10</option>
 </select>
-<br /><br /> --%>
+<br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>
