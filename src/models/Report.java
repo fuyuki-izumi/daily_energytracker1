@@ -66,11 +66,11 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
-   /*@Column(name = "satisfy" , nullable = true)
-    private Integer satisfy = 1;
+   @Column(name = "satisfy", nullable = true)
+    private Integer satisfy;
 
-    @Column(name = "accomplishment" , nullable = true)
-    private Integer accomplishment = 1; */
+    @Column(name = "accomplishment", nullable = true)
+    private Integer accomplishment;
 
 
 
@@ -130,7 +130,7 @@ public class Report {
         this.updated_at = updated_at;
     }
 
-   /*public Integer getSatisfy(){
+   public Integer getSatisfy(){
         return satisfy;
     }
 
@@ -144,5 +144,5 @@ public class Report {
 
     public void setAccomplishment(Integer accomplishment){
        this.accomplishment = accomplishment;
-    } */
+    }
 }
