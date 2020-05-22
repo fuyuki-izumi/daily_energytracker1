@@ -61,6 +61,11 @@ public class ReportsCreateServlet extends HttpServlet {
             //r.setSatisfy(request.getParameter("satisfy"));
             //r.setAccomplishment(request.getParameter("accomplishment"));
 
+            Integer.parseInt(request.getParameter("satisfy"));
+            Integer.parseInt(request.getParameter("accomplishment"));
+
+
+
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
@@ -68,6 +73,7 @@ public class ReportsCreateServlet extends HttpServlet {
             /* Report report = em.find(Report.class, Integer.parseInt(request.getParameter("report_id")));
             y.setReport(report); */
            //Integer accomplishment = em.find(Report.class, Integer.parseInt(request.getParameter("accomplishment")));
+
            /* Integer.valueOf(request.getParameter("Accomplishment")).intValue();
             Integer.valueOf(request.getParameter("Satisfy")).intValue();*/
 

@@ -36,7 +36,7 @@
                 ${param.content}
             </div>
             <div id="footer">
-                by Taro Kirameki
+                by Fuyuki Izumi
             </div>
          </div>
 
