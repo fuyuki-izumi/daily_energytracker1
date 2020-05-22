@@ -34,11 +34,14 @@ public class YoineUpdateServlet extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
 
 
-
+            //Yoineオブジェクト
             Yoine y = new Yoine();
             //Yoine.javaからemp_idとrep_idを呼び出す
+            //Employeeオブジェクトのemployeeはログインしているユーザー　あらかじめセッションスコープに登録してあるL14 4.1
             y.setEmployee((Employee)request.getSession().getAttribute("login_employee"));
 
+            //Reportのオブジェクトで渡してあげる
+            //show.jspからreport_idをキーとして渡される
             Report report = em.find(Report.class, Integer.parseInt(request.getParameter("report_id")));
             y.setReport(report);
 
@@ -65,7 +68,7 @@ public class YoineUpdateServlet extends HttpServlet {
            List<String> errors = YoineValidator.validate(y);
            if(errors.size() > 0){
                em.close();
-
+               //setAttribute()メソッドでjspにデータを送る　リクエストスコープ
                request.setAttribute("_token", request.getSession().getId());
                request.setAttribute("yoine", y);
                request.setAttribute("errors", errors);
