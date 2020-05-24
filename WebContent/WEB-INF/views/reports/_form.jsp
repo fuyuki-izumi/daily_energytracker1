@@ -26,6 +26,9 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
+<%--<label for="sum">合計数（intテスト）</label><br />
+<input type="text" name="sum" value="${report.sum}" /> --%>
+
 <form method ="post" action="#">
 <label for="satisfy">満足度（喜び）</label><br />
 <select name="satisfy"  >

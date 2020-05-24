@@ -72,6 +72,9 @@ public class Report {
     @Column(name = "accomplishment", nullable = true)
     private Integer accomplishment;
 
+    @Column(name = "sum", nullable = true)
+    private Integer sum;
+
 
 
     public Integer getId() {
@@ -144,5 +147,13 @@ public class Report {
 
     public void setAccomplishment(Integer accomplishment){
        this.accomplishment = accomplishment;
+    }
+
+    public Integer getSum(){
+        return sum;
+    }
+
+    public void setSum(Integer sum){
+        this.sum = sum;
     }
 }
