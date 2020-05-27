@@ -66,14 +66,14 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    //プルダウンリスト用のカラム
    @Column(name = "satisfy", nullable = true)
     private Integer satisfy;
 
     @Column(name = "accomplishment", nullable = true)
     private Integer accomplishment;
 
-    @Column(name = "sum", nullable = true)
-    private Integer sum;
+
 
 
 
@@ -149,11 +149,4 @@ public class Report {
        this.accomplishment = accomplishment;
     }
 
-    public Integer getSum(){
-        return sum;
-    }
-
-    public void setSum(Integer sum){
-        this.sum = sum;
-    }
 }

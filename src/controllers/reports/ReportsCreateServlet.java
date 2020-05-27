@@ -58,11 +58,16 @@ public class ReportsCreateServlet extends HttpServlet {
 
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
+
+            r.setSatisfy(Integer.valueOf(request.getParameter("satisfy")));
+            r.setAccomplishment(Integer.valueOf(request.getParameter("accomplishment")));
+
+
             //r.setSatisfy(request.getParameter("satisfy"));
             //r.setAccomplishment(request.getParameter("accomplishment"));
 
-            Integer.parseInt(request.getParameter("satisfy"));
-            Integer.parseInt(request.getParameter("accomplishment"));
+            //Integer.parseInt(request.getParameter("satisfy"));
+            //Integer.parseInt(request.getParameter("accomplishment"));
 
 
 

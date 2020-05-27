@@ -26,12 +26,11 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
-<%--<label for="sum">合計数（intテスト）</label><br />
-<input type="text" name="sum" value="${report.sum}" /> --%>
+
 
 <form method ="post" action="#">
 <label for="satisfy">満足度（喜び）</label><br />
-<select name="satisfy"  >
+<select name="satisfy"  value="${report.satisfy}">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -46,7 +45,7 @@
 <br /><br />
 
 <label for="accomplishment">達成感</label><br />
-<select name="accomplishment" <%-- value="${report.accomplishment}" --%>>
+<select name="accomplishment"  value="${report.accomplishment}">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
