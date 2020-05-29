@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,11 +17,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllTrackers",
-            query = ""
+            query = "SELECT t FROM Energy AS t ORDER BY t.id DESC"
             ),
     @NamedQuery(
             name = "getTrackersCount",
-            query = "SELECT COUNT(t) FROM ENERGY AS t"
+            query = "SELECT COUNT(t) FROM Energy AS t"
 
             )
 })
@@ -38,6 +40,9 @@ public class Energy {
     @ManyToOne
     @JoinColumn(name = "report_id", nullable = false)
     private Report report;
+
+    @Column(name = "tracker_date", nullable = false)
+    private Date tracker_date;
 
     @Column(name = "am01", nullable = true)
     private Integer am01;
@@ -119,6 +124,29 @@ public class Energy {
         this.id = id;
     }
 
+    public Employee getEmployee(){
+        return employee;
+    }
+
+    public void setEmployee(Employee employee){
+        this.employee = employee;
+    }
+
+    public Report setReport(){
+        return report;
+    }
+
+    public void getReport(Report report){
+        this.report = report;
+    }
+
+    public Date setTracker_date(){
+        return tracker_date;
+    }
+
+    public void getTracker_date(Date tracker_date){
+        this.tracker_date = tracker_date;
+    }
     public Integer getAm01() {
         return am01;
     }
