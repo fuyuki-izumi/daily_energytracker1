@@ -138,3 +138,21 @@ pre {
 h3 {
     font-size: larger;
 }
+
+table#tracker_list th{
+    font-wright: bold;
+    padding: 10px 2%;
+}
+
+table#tracker_list .tracker_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+
+table#tracker_list .tracker_date{
+    width: 20%;
+}
+
+table#tracker_list .report_action{
+    width: 13%;
+}
