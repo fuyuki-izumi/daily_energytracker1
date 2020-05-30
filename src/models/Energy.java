@@ -132,21 +132,22 @@ public class Energy {
         this.employee = employee;
     }
 
-    public Report setReport(){
+    public Report getReport(){
         return report;
     }
 
-    public void getReport(Report report){
+    public void setReport(Report report){
         this.report = report;
     }
 
-    public Date setTracker_date(){
+    public Date getTracker_date(){
         return tracker_date;
     }
 
-    public void getTracker_date(Date tracker_date){
+    public void setTracker_date(Date tracker_date){
         this.tracker_date = tracker_date;
     }
+
     public Integer getAm01() {
         return am01;
     }
