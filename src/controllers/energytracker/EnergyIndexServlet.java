@@ -55,11 +55,11 @@ public class EnergyIndexServlet extends HttpServlet {
         request.setAttribute("trackers_count", trackers_count);
         request.setAttribute("page", page);
 
-        //エラー処理 validator関連
-        /*if(request.getSession().getAttribute("flush") != null){
+        //更新が完了しました、系のフラッシュ
+        if(request.getSession().getAttribute("flush") != null){
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
-        }*/
+        }
 
         RequestDispatcher rd= request.getRequestDispatcher("/WEB-INF/views/energy/index.jsp");
         rd.forward(request, response);

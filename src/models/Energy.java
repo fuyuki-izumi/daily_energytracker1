@@ -184,7 +184,7 @@ public class Energy {
         return am05;
     }
 
-    public void setAt05(Integer am05) {
+    public void setAm05(Integer am05) {
         this.am05 = am05;
     }
 
@@ -200,7 +200,7 @@ public class Energy {
         return am07;
     }
 
-    public void setAM07(Integer am07) {
+    public void setAm07(Integer am07) {
         this.am07 = am07;
     }
 
