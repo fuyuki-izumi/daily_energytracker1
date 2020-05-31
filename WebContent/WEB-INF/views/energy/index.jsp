@@ -18,7 +18,7 @@
                     <th class="tracker_date">日付</th>
                     <th class="tracker_action">操作</th>
                 </tr>
-                <c:forEach var="report" items="${reports}" varStatus="status">
+                <c:forEach var="energy" items="${trackers}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="tracker_name"><c:out value="${energy.employee.name}" /></td>
                         <td class="tracker_date"><fmt:formatDate value='${energy.tracker_date}' pattern='yyyy-MM-dd' /></td>
@@ -41,7 +41,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/reports/new' />">新規トラッカーの登録</a></p>
+        <p><a href="<c:url value='/energy/new' />">新規トラッカーの登録</a></p>
 
     </c:param>
 </c:import>

@@ -37,9 +37,9 @@ public class Energy {
     @JoinColumn(name = "employee_id", nullable = false)
     private Employee employee;
 
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "report_id", nullable = false)
-    private Report report;
+    private Report report; */
 
     @Column(name = "tracker_date", nullable = false)
     private Date tracker_date;
@@ -132,13 +132,13 @@ public class Energy {
         this.employee = employee;
     }
 
-    public Report getReport(){
+    /*public Report getReport(){
         return report;
     }
 
     public void setReport(Report report){
         this.report = report;
-    }
+    }*/
 
     public Date getTracker_date(){
         return tracker_date;
@@ -330,6 +330,10 @@ public class Energy {
 
     public void setPm11(Integer pm11) {
         this.pm11 = pm11;
+    }
+
+    public Integer getPm12(){
+        return pm12;
     }
 
     public void setPm12(Integer pm12) {
