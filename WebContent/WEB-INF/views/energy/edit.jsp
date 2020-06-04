@@ -3,7 +3,7 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${tracker != null}">
+            <c:when test="${energy != null}">
                 <h2>トラッカー　編集ページ</h2>
                 <form method="POST" action="<c:url value='/energy/update' />">
                     <c:import url="_e.form.jsp" />

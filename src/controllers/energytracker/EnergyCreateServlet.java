@@ -73,16 +73,7 @@ public class EnergyCreateServlet extends HttpServlet {
             t.setPm11(Integer.valueOf(request.getParameter("pm11")));
             t.setPm12(Integer.valueOf(request.getParameter("pm12")));
 
-
-
-
-
-
-            /*Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-            r.setCreated_at(currentTime);
-            r.setUpdated_at(currentTime);
-
-            List<String> errors = ReportValidator.validate(r);
+           /* List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {
                 em.close();
 

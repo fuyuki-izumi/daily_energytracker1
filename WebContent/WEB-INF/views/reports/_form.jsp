@@ -30,7 +30,7 @@
 
 <form method ="post" action="#">
 <label for="satisfy">満足度（喜び）</label><br />
-<select name="satisfy"  value="${report.satisfy}">
+<select name="satisfy" <%--value="${report.satisfy}"--%>>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -64,3 +64,7 @@
 <button type="submit">投稿</button>
 
 </form>
+
+<script>
+
+</script>

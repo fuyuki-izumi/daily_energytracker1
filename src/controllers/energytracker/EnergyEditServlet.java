@@ -35,14 +35,17 @@ public class EnergyEditServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
+        //該当のIDのトラッカー１件のみをDBから取得
         Energy t = em.find(Energy.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 
         Employee login_employee = (Employee)request.getSession().getAttribute("login_employee");
         if(t != null && login_employee.getId() == t.getEmployee().getId()) {
-            request.setAttribute("tracker", t);
+            //トラッカー情報とセッションIDをリクエストスコープに登録
+            request.setAttribute("energy", t);
             request.setAttribute("_token", request.getSession().getId());
+            //トラッカーIDをセッションスコープに登録
             request.getSession().setAttribute("tracker_id", t.getId());
         }
 
