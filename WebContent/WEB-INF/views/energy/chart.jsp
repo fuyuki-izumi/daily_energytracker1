@@ -17,12 +17,34 @@ var myChart = new Chart(ctx, {
     datasets: [{
 
       label: '${energy.tracker_date}日のエナジートラッカー',
-      data: [${energy.am01}, ${energy.am02}, ${energy.am03}, ${energy.am05}, ${energy.am06}, ${energy.am07}, ${energy.am08}, ${energy.am09}, ${energy.am10}, ${energy.am11}, ${energy.am12}, ${energy.pm01}, ${energy.pm02}, ${energy.pm03}, ${energy.pm04}, ${energy.pm05}, ${energy.pm06}, ${energy.pm07}, ${energy.pm08}, ${energy.pm09}, ${energy.pm10}, ${energy.pm11}, ${energy.pm12}],
+      data: [${energy.am01}, ${energy.am02}, ${energy.am03}, ${energy.am04}, ${energy.am05}, ${energy.am06}, ${energy.am07}, ${energy.am08}, ${energy.am09}, ${energy.am10}, ${energy.am11}, ${energy.am12}, ${energy.pm01}, ${energy.pm02}, ${energy.pm03}, ${energy.pm04}, ${energy.pm05}, ${energy.pm06}, ${energy.pm07}, ${energy.pm08}, ${energy.pm09}, ${energy.pm10}, ${energy.pm11}, ${energy.pm12}],
       backgroundColor: "rgba(255,153,0,0.4)",
       lineTension: 0
     }]
   }
 });
+
+var options = {
+        scales: {
+            xAxes: [{
+                scaleLabel: {
+                    display:true,
+                    labelString:'時刻'
+                }
+            }],
+            yAxes:[{
+                ticks:{
+                    userCallback: function(tick){
+                        return tick.toString()+'％';
+                    }
+                },
+                scaleLabel: {
+                    display:true,
+                    labelString: 'エナジーレベル'
+                }
+            }]
+        }
+};
 </script>
 
 </body>

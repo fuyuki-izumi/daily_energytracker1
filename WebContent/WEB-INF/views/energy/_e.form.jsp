@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<jsp:useBean id="am01" class="java.lang.String" scope="request" />
+
 <%-- <c:if test="${errors != null}">
     <div id="flush_error">
         入力内容にエラーがあります。<br />
@@ -37,6 +37,10 @@
 </select>
 <br /><br />
 </c:forEach>  --%>
+<div id ="wrapper">
+    <div style="float: left;
+                width: 50%">
+
 
 <label for="am01">1時</label><br />
 <select name="am01" <%--id=""--%>>
@@ -230,6 +234,10 @@
 </select>
 <br /><br />
 
+</div>
+<div style="float: right;
+            width: 50%">
+
 <label for="pm01">13時</label><br />
 <select name="pm01"  value="${energy.pm01}">
     <option value="0"<c:if test="${energy.pm01 == '0' }">selected </c:if>>0%</option>
@@ -421,6 +429,9 @@
     <option value="100"<c:if test="${energy.pm12 == '100' }">selected </c:if>>100%</option>
 </select>
 <br /><br />
+
+</div>
+</div>
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>

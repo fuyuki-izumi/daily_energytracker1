@@ -31,31 +31,31 @@
 <form method ="post" action="#">
 <label for="satisfy">満足度（喜び）</label><br />
 <select name="satisfy" <%--value="${report.satisfy}"--%>>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
+    <option value="1"<c:if test="${report.satisfy == '1' }">selected </c:if>>1</option>
+    <option value="2"<c:if test="${report.satisfy == '2' }">selected </c:if>>2</option>
+    <option value="3"<c:if test="${report.satisfy == '3' }">selected </c:if>>3</option>
+    <option value="4"<c:if test="${report.satisfy == '4' }">selected </c:if>>4</option>
+    <option value="5"<c:if test="${report.satisfy == '5' }">selected </c:if>>5</option>
+    <option value="6"<c:if test="${report.satisfy == '6' }">selected </c:if>>6</option>
+    <option value="7"<c:if test="${report.satisfy == '7' }">selected </c:if>>7</option>
+    <option value="8"<c:if test="${report.satisfy == '8' }">selected </c:if>>8</option>
+    <option value="9"<c:if test="${report.satisfy == '9' }">selected </c:if>>9</option>
+    <option value="10"<c:if test="${report.satisfy == '10' }">selected </c:if>>10</option>
 </select>
 <br /><br />
 
 <label for="accomplishment">達成感</label><br />
 <select name="accomplishment"  value="${report.accomplishment}">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
+    <option value="1"<c:if test="${report.accomplishment == '1' }">selected </c:if>>1</option>
+    <option value="2"<c:if test="${report.accomplishment == '2' }">selected </c:if>>2</option>
+    <option value="3"<c:if test="${report.accomplishment == '3' }">selected </c:if>>3</option>
+    <option value="4"<c:if test="${report.accomplishment == '4' }">selected </c:if>>4</option>
+    <option value="5"<c:if test="${report.accomplishment == '5' }">selected </c:if>>5</option>
+    <option value="6"<c:if test="${report.accomplishment == '6' }">selected </c:if>>6</option>
+    <option value="7"<c:if test="${report.accomplishment == '7' }">selected </c:if>>7</option>
+    <option value="8"<c:if test="${report.accomplishment == '8' }">selected </c:if>>8</option>
+    <option value="9"<c:if test="${report.accomplishment == '9' }">selected </c:if>>9</option>
+    <option value="10"<c:if test="${report.accomplishment == '10' }">selected </c:if>>10</option>
 </select>
 <br /><br />
 
