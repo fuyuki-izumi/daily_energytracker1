@@ -41,7 +41,7 @@ public class Energy {
     @JoinColumn(name = "report_id", nullable = false)
     private Report report; */
 
-    @Column(name = "tracker_date", nullable = false)
+    @Column(name = "tracker_date", nullable = false, unique = true)
     private Date tracker_date;
 
     @Column(name = "am01", nullable = true)
