@@ -28,13 +28,13 @@
                     <tr class="row${status.count % 2}">
                         <td class="tracker_name"><c:out value="${energy.employee.name}" /></td>
                         <td class="tracker_date"><fmt:formatDate value='${energy.tracker_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="tracker_action"><a href="<c:url value='/energy/show?id=${energy.id}' />">詳細を見る</a></td>
+                        <td class="tracker_action"><a href="<c:url value='/energy/show?id=${energy.id}&tracker_date=${energy.tracker_date}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
-        <div id="pagination">
+         <div id="pagination">
             （全 ${trackers_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((trackers_count - 1) / 15) + 1}" step="1">
                 <c:choose>

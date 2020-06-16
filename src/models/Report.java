@@ -35,6 +35,12 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getMyReportsCount",
             query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+            ),
+
+    //エナジートラッカーページの日報
+    @NamedQuery(
+            name = "getMyDayReports",
+            query = "SELECT r FROM Report AS r WHERE r.employee = :employee AND r.report_date = :tracker_date"
             )
 })
 @Entity
@@ -73,7 +79,18 @@ public class Report {
     @Column(name = "accomplishment", nullable = true)
     private Integer accomplishment;
 
+  /*//日報(複数)に対し比較する対象の日付（1）
+    @ManyToOne
+    @JoinColumn(name = "trackers_date", nullable = true)
+    private Energy tracker_date;
 
+    public Energy getTracker_date(){
+        return tracker_date;
+    }
+
+    public void setTracker_date(Energy tracker_date){
+        this.tracker_date = tracker_date;
+    }*/
 
 
 
