@@ -43,7 +43,7 @@
 
 
 <label for="am01">1時</label><br />
-<select name="am01" <%--id=""--%>>
+<select name="am01" >
     <option value="0" <c:if test="${energy.am01 == '0' }">selected </c:if>>0%</option>
     <option value="10" <c:if test="${energy.am01 == '10' }">selected </c:if>>10%</option>
     <option value="20" <c:if test="${energy.am01 == '20' }">selected </c:if>>20%</option>
@@ -171,7 +171,7 @@
 <br /><br />
 
 <label for="am09">09時</label><br />
-<select name="am09"  value="${energy.am09}">
+<select name="am09"  >
     <option value="0" <c:if test="${energy.am09 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.am09 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.am09 == '20' }">selected </c:if>>20%</option>
@@ -187,7 +187,7 @@
 <br /><br />
 
 <label for="am10">10時</label><br />
-<select name="am10"  value="${energy.am10}">
+<select name="am10"  >
     <option value="0" <c:if test="${energy.am10 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.am10 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.am10 == '20' }">selected </c:if>>20%</option>
@@ -203,7 +203,7 @@
 <br /><br />
 
 <label for="am11">11時</label><br />
-<select name="am11"  value="${energy.am11}">
+<select name="am11"  >
     <option value="0" <c:if test="${energy.am11 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.am11 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.am11 == '20' }">selected </c:if>>20%</option>
@@ -219,7 +219,7 @@
 <br /><br />
 
 <label for="am12">12時</label><br />
-<select name="am12"  value="${energy.am12}">
+<select name="am12"  >
     <option value="0"<c:if test="${energy.am12 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.am12 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.am12 == '20' }">selected </c:if>>20%</option>
@@ -239,7 +239,7 @@
             width: 50%">
 
 <label for="pm01">13時</label><br />
-<select name="pm01"  value="${energy.pm01}">
+<select name="pm01" >
     <option value="0"<c:if test="${energy.pm01 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm01 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm01 == '20' }">selected </c:if>>20%</option>
@@ -255,7 +255,7 @@
 <br /><br />
 
 <label for="pm02">14時</label><br />
-<select name="pm02"  value="${energy.pm02}">
+<select name="pm02" >
     <option value="0"<c:if test="${energy.pm02 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm02 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm02 == '20' }">selected </c:if>>20%</option>
@@ -271,7 +271,7 @@
 <br /><br />
 
 <label for="pm03">15時</label><br />
-<select name="pm03"  value="${energy.pm03}">
+<select name="pm03"  >
     <option value="0" <c:if test="${energy.pm03 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm03 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm03 == '20' }">selected </c:if>>20%</option>
@@ -287,7 +287,7 @@
 <br /><br />
 
 <label for="pm04">16時</label><br />
-<select name="pm04"  value="${energy.pm04}">
+<select name="pm04"  >
     <option value="0" <c:if test="${energy.pm04 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm04 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm04 == '20' }">selected </c:if>>20%</option>
@@ -303,7 +303,7 @@
 <br /><br />
 
 <label for="pm05">17時</label><br />
-<select name="pm05"  value="${energy.pm05}">
+<select name="pm05"  >
     <option value="0" <c:if test="${energy.pm05 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm05 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm05 == '20' }">selected </c:if>>20%</option>
@@ -319,7 +319,7 @@
 <br /><br />
 
 <label for="pm06">18時</label><br />
-<select name="pm06"  value="${energy.pm06}">
+<select name="pm06"  >
     <option value="0" <c:if test="${energy.pm06 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm06 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm06 == '20' }">selected </c:if>>20%</option>
@@ -335,7 +335,7 @@
 <br /><br />
 
 <label for="pm07">19時</label><br />
-<select name="pm07"  value="${energy.pm07}">
+<select name="pm07" >
     <option value="0"<c:if test="${energy.pm07 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm07 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm07 == '20' }">selected </c:if>>20%</option>
@@ -351,7 +351,7 @@
 <br /><br />
 
 <label for="pm08">20時</label><br />
-<select name="pm08"  value="${energy.pm08}">
+<select name="pm08"  >
     <option value="0"<c:if test="${energy.pm08 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm08 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm08 == '20' }">selected </c:if>>20%</option>
@@ -367,7 +367,7 @@
 <br /><br />
 
 <label for="pm09">21時</label><br />
-<select name="pm09"  value="${energy.pm09}">
+<select name="pm09" >
     <option value="0"<c:if test="${energy.pm09 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm09 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm09 == '20' }">selected </c:if>>20%</option>
@@ -383,7 +383,7 @@
 <br /><br />
 
 <label for="pm10">22時</label><br />
-<select name="pm10"  value="${energy.pm10}">
+<select name="pm10"  >
     <option value="0"<c:if test="${energy.pm10 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm10 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm10 == '20' }">selected </c:if>>20%</option>
@@ -399,7 +399,7 @@
 <br /><br />
 
 <label for="pm11">23時</label><br />
-<select name="pm11"  value="${energy.pm11}">
+<select name="pm11" >
     <option value="0"<c:if test="${energy.pm11 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm11 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm11 == '20' }">selected </c:if>>20%</option>
@@ -415,7 +415,7 @@
 <br /><br />
 
 <label for="pm12">24時</label><br />
-<select name="pm12"  value="${energy.pm12}">
+<select name="pm12"  >
     <option value="0"<c:if test="${energy.pm12 == '0' }">selected </c:if>>0%</option>
     <option value="10"<c:if test="${energy.pm12 == '10' }">selected </c:if>>10%</option>
     <option value="20"<c:if test="${energy.pm12 == '20' }">selected </c:if>>20%</option>

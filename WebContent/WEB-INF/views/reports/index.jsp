@@ -8,7 +8,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>日報　一覧</h2>
+        <h2>作業報告　一覧</h2>
         <table id="report_list">
             <tbody>
                 <tr>
@@ -43,7 +43,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/reports/new' />">新規日報の登録</a></p>
+        <p><a href="<c:url value='/reports/new' />">新規作業報告の登録</a></p>
 
     </c:param>
 </c:import>

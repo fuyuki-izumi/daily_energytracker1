@@ -30,7 +30,7 @@
 
 <form method ="post" action="#">
 <label for="satisfy">満足度（喜び）</label><br />
-<select name="satisfy" <%--value="${report.satisfy}"--%>>
+<select name="satisfy" <%--value="${report.satisfy}"この記載はいらない、select属性にはvalue無し--%>>
     <option value="1"<c:if test="${report.satisfy == '1' }">selected </c:if>>1</option>
     <option value="2"<c:if test="${report.satisfy == '2' }">selected </c:if>>2</option>
     <option value="3"<c:if test="${report.satisfy == '3' }">selected </c:if>>3</option>
@@ -45,7 +45,7 @@
 <br /><br />
 
 <label for="accomplishment">達成感</label><br />
-<select name="accomplishment"  value="${report.accomplishment}">
+<select name="accomplishment" >
     <option value="1"<c:if test="${report.accomplishment == '1' }">selected </c:if>>1</option>
     <option value="2"<c:if test="${report.accomplishment == '2' }">selected </c:if>>2</option>
     <option value="3"<c:if test="${report.accomplishment == '3' }">selected </c:if>>3</option>

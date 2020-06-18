@@ -6,7 +6,6 @@
         <class>models.Report</class>
         <class>models.Yoine</class>
         <class>models.Energy</class>
-        <class>models.DayReport</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
@@ -14,9 +13,9 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
             <property name="javax.persistence.schema-generation.scripts.action" value="none"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_bf13ad7fef14a0a?reconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
-            <property name="javax.persistence.jdbc.user" value="bad485e4db79c3"/>
-            <property name="javax.persistence.jdbc.password" value="3d6879db"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_7d28b440af25ac7?reconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+            <property name="javax.persistence.jdbc.user" value="bac3a1e4318683"/>
+            <property name="javax.persistence.jdbc.password" value="496953ef"/>
         </properties>
     </persistence-unit>
 </persistence>

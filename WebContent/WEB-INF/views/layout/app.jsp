@@ -6,7 +6,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>日報管理システム</title>
+        <title>作業報告システム</title>
 
         <%--レイアウトを追加、フロントエンド --%>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
@@ -16,12 +16,12 @@
         <div id="wrapper">
             <div id="header">
               <div id="header_menu">
-                    <h1><a href="<c:url value='/' />">日報管理システム</a></h1>&nbsp;
+                    <h1><a href="<c:url value='/' />">作業報告システム</a></h1>&nbsp;
                     <c:if test="${sessionScope.login_employee != null}">
                         <c:if test="${sessionScope.login_employee.admin_flag == 1}">
                             <a href="<c:url value='/employees/index' />">従業員管理</a>&nbsp;
                         </c:if>
-                        <a href="<c:url value='/reports/index' />">日報管理</a>&nbsp;
+                        <a href="<c:url value='/reports/index' />">作業報告管理</a>&nbsp;
                         <a href="<c:url value='/energy/index' />">エナジートラッカー</a> &nbsp;
                     </c:if>
                 </div>
