@@ -13,6 +13,7 @@
 </c:if> --%>
 <form method ="post" action="#" >
 <label for="tracker_date">日付</label><br />
+<%--以下の奴が怪しい --%>
 <input type="date" name="tracker_date" value="<fmt:formatDate value='${tracker.tracker_date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 

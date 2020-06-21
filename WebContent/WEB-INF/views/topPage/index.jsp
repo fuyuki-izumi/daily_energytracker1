@@ -9,8 +9,9 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>日報管理システムへようこそ</h2>
-        <h3>【自分の日報 一覧】</h3>
+        <%-- <h2>作業管理システムへようこそ</h2> 数字が小さくなるほど字は大きくなる。--%>
+        <h3>【自分の作業報告 一覧】</h3>
+         <p class="btn"><a href="<c:url value='/reports/new' />">新規作業報告の登録</a></p>
         <table id="report_list">
             <tbody>
                 <tr>
@@ -43,6 +44,6 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/reports/new' />">新規日報の登録</a></p>
+
     </c:param>
 </c:import>

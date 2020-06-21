@@ -38,7 +38,9 @@ public class EnergyUpdateServlet extends HttpServlet {
 
             Energy t = em.find(Energy.class, (Integer)(request.getSession().getAttribute("tracker_id")));
 
+            //エラーが起こっている　編集画面で日付の情報が引き継がれていないことが原因か。Editを確認。
             t.setTracker_date(Date.valueOf(request.getParameter("tracker_date")));
+
 
             t.setAm01(Integer.valueOf(request.getParameter("am01")));
             t.setAm02(Integer.valueOf(request.getParameter("am02")));

@@ -9,6 +9,7 @@
             </div>
         </c:if>
         <h2>作業報告　一覧</h2>
+        <p class="btn"><a href="<c:url value='/reports/new' />">新規作業報告の登録</a></p>
         <table id="report_list">
             <tbody>
                 <tr>
@@ -43,7 +44,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/reports/new' />">新規作業報告の登録</a></p>
+
 
     </c:param>
 </c:import>

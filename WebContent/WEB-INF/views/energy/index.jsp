@@ -9,14 +9,20 @@
             </div>
         </c:if>
         <h1>エナジートラッカーとは</h1>
-        <p>自身の1日を通した集中力、体力、精神力の波がどうなっているかを可視化する記録である。なお以下の％帯の割り当ては目安であり個人差による。（要編集）</p><br />
-        <p>0~30%帯＜Routine>集中力、意思決定を必要としないルーティンワーク<br>
-        30~50%帯＜Creative＞拡散思考を必要とするアイデアワーク<br>
-        50~80%帯＜High-Concentration＞インプットに関わる集中力を必要とするワーク<br>
-        80~100%帯＜High-Energy＞アウトプットに関わるエネルギーを必要とするワーク</p><br />
+        <p><nobr>自身の1日を通した集中力、体力、精神力の波がどうなっているかを可視化する記録である。</nobr>
+        <br><nobr>やり方は主観で％を振っていくだけ。ボーッとしているから20%、最高に冴えているから90%など</nobr>
+        <br><nobr>＊なお以下の％帯の割り当ては目安であり個人差による。</nobr>
+        </p>
+        <br />
+
+        <p class="explanation"><nobr>100~80%帯<span class="bold">＜High-Energy＞</span>アウトプットに関わるエネルギー(集中力、意思決定力)を必要とするワーク</nobr><br>
+        <nobr>80~50%<span class="bold">＜High-Concentration＞</span>インプットに関わる集中力を必要とするワーク</nobr><br>
+        <nobr>50~30%帯<span class="bold">＜Creative＞</span>思考を必要とするアイデアワーク</nobr><br>
+        <nobr>30~0%帯<span class="bold">＜Routine></span>集中力、意思決定を必要としないルーティンワーク</nobr></p><br />
 
 
         <h2>エナジートラッカー　一覧</h2>
+        <p class="btn"><a href="<c:url value='/energy/new' />">新規トラッカーの登録</a></p>
         <table id="tracker_list">
             <tbody>
                 <tr>
@@ -47,7 +53,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/energy/new' />">新規トラッカーの登録</a></p>
+
 
     </c:param>
 </c:import>

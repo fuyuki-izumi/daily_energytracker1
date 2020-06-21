@@ -44,7 +44,7 @@ public class EnergyShowServlet extends HttpServlet {
         Employee login_employee = (Employee)request.getSession().getAttribute("login_employee");
 
         //エラーcontrollers.energytracker.EnergyShowServlet.doGet(EnergyShowServlet.java:46)
-        //オブジェクトを渡してしまっているため
+        //findは主キー（）しか
         //Energy et = em.find(Energy.class, Date.valueOf(request.getParameter("tracker_date")));
 
         //日報一覧表示
